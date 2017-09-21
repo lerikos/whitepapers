@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 #gem for tagging
+gem 'protected_attributes'
 gem 'acts-as-taggable-on', '~> 4.0'
 
 # Use jquery as the JavaScript library
