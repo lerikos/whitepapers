@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.4'
 
 #for admin
 
@@ -62,5 +62,6 @@ group :production do
   
   gem 'pg'
   gem 'rails_12factor'
+
   
 end
