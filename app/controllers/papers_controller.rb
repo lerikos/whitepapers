@@ -4,7 +4,11 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    @papers = Paper.all
+    if params[:tag]
+      @papers = Paper.tagged_with(params[:tag])
+    else
+      @papers = Paper.all
+    end
   end
 
   # GET /papers/1

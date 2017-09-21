@@ -2,7 +2,16 @@
 
 <h1>Listing Papers</h1>
 
-<table>
+<div id="papers">
+  <% @papers.each do |paper| %>
+    <h2><%= link_to paper.title, paper %></h2>
+    <%= simple_format paper.summary %>
+    <p>Tags: <%= paper.tag_list %></p>
+    <p><%= link_to "Show Whitepaper", paper %></p>
+  <% end %>
+</div>
+
+<!--table>
   <thead>
     <tr>
       <th>Title</th>
@@ -20,13 +29,14 @@
         <td><%= paper.summary %></td>
         <td><%= paper.publisher %></td>
         <td><%= paper.url %></td>
+        <td><%= paper.tag_list %></td>
         <td><%= link_to 'Show', paper %></td>
         <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
         <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table-->
 
 <br>
 
