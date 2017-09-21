@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
+<link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+<h3 style="text-align: center;">Browse the latest Whitepapers <span role="img" aria-label="detective"></span>&#x1F575<span role="img" aria-label="document">&#x1F4C4</span></h3>
 
-<h1>Listing Papers</h1>
+<div id="tag_cloud">
+  <% tag_cloud Paper.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
 
 <div id="papers">
   <% @papers.each do |paper| %>
@@ -40,4 +46,3 @@
 
 <br>
 
-<%= link_to 'New Paper', new_paper_path %>
