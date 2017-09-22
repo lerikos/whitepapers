@@ -65,6 +65,12 @@ class PapersController < ApplicationController
     end
   end
 
+  def upvote
+    @paper = Paper.find(params[:id])
+    @paper.upvote_by current_user
+    redirect_to papers_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_paper
@@ -73,6 +79,6 @@ class PapersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paper_params
-      params.require(:paper).permit(:title, :summary, :publisher, :url)
+      params.require(:paper).permit(:title, :summary, :publisher, :url, :tag_list)
     end
 end

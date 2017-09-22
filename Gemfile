@@ -6,6 +6,10 @@ ruby '2.3.4'
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
 gem "devise"
+gem "pundit"
+
+# for voting
+gem 'acts_as_votable'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

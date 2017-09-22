@@ -2,9 +2,10 @@
 <link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 <h3 style="text-align: center;">Browse the latest Whitepapers <span role="img" aria-label="detective"></span>&#x1F575<span role="img" aria-label="document">&#x1F4C4</span></h3>
 
+<h3 style="text-align: centre;">All Whitepapers</h3>
 <div id="tag_cloud">
   <% tag_cloud Paper.tag_counts, %w{s m l} do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+    <%= link_to tag.name, papers_path({tag: tag.name}), class: css_class %>
   <% end %>
 </div>
 
@@ -13,7 +14,6 @@
     <h2><%= link_to paper.title, paper %></h2>
     <%= simple_format paper.summary %>
     <p>Tags: <%= paper.tag_list %></p>
-    <p><%= link_to "Show Whitepaper", paper %></p>
   <% end %>
 </div>
 
